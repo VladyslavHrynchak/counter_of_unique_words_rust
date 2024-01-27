@@ -28,7 +28,7 @@ impl CounterOfWords{
         let reader: Arc<Mutex<BufReader<fs::File>>> = Arc::new(Mutex::new(BufReader::new(file)));
         println!("Start reading the file");
     
-        for i  in 0..4 {
+        for i  in 0..num_of_threads {
             let thread_id = i as usize;
     
             let reader = Arc::clone(&reader);
